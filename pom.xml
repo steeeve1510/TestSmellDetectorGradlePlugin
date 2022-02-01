@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.heigl</groupId>
+    <artifactId>test-smell-detector-gradle-plugin</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <packaging>jar</packaging>
+    <name>${project.artifactId}</name>
+
+    <properties>
+        <maven.compiler.source>8</maven.compiler.source>
+        <maven.compiler.target>8</maven.compiler.target>
+        <version.gradle>6.1.1</version.gradle>
+        <version.slf4j>1.7.33</version.slf4j>
+    </properties>
+
+    <repositories>
+        <repository>
+            <id>maven-central</id>
+            <url>https://repo1.maven.org/maven2/</url>
+        </repository>
+        <repository>
+            <id>repo.gradle.org</id>
+            <url>https://repo.gradle.org/gradle/libs-releases-local/</url>
+        </repository>
+    </repositories>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.gradle</groupId>
+            <artifactId>gradle-core</artifactId>
+            <version>${version.gradle}</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.gradle</groupId>
+            <artifactId>gradle-plugins</artifactId>
+            <version>${version.gradle}</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.gradle</groupId>
+            <artifactId>gradle-core-api</artifactId>
+            <version>${version.gradle}</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.gradle</groupId>
+            <artifactId>gradle-logging</artifactId>
+            <version>${version.gradle}</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.gradle</groupId>
+            <artifactId>gradle-base-services</artifactId>
+            <version>${version.gradle}</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.gradle</groupId>
+            <artifactId>gradle-process-services</artifactId>
+            <version>${version.gradle}</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.gradle</groupId>
+            <artifactId>gradle-model-core</artifactId>
+            <version>${version.gradle}</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.gradle</groupId>
+            <artifactId>gradle-platform-jvm</artifactId>
+            <version>${version.gradle}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.codehaus.groovy</groupId>
+            <artifactId>groovy-all</artifactId>
+            <version>2.4.7</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>${version.slf4j}</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.ant</groupId>
+            <artifactId>ant</artifactId>
+            <version>1.8.2</version>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.22</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>edu.rit.se.testsmells</groupId>
+            <artifactId>TestSmellDetector</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>com.opencsv</groupId>
+            <artifactId>opencsv</artifactId>
+            <version>5.5.2</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-plugin-plugin</artifactId>
+                <version>3.6.4</version>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
