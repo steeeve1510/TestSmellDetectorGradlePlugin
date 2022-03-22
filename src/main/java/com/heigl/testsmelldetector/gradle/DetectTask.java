@@ -1,6 +1,7 @@
 package com.heigl.testsmelldetector.gradle;
 
 import com.heigl.testsmelldetector.gradle.util.TestFileDetector;
+import com.heigl.testsmelldetector.gradle.util.TestSmellDetectorProvider;
 import com.heigl.testsmelldetector.gradle.util.TestSmellDetectorRunner;
 import com.heigl.testsmelldetector.gradle.util.TestSmellWriter;
 import org.gradle.api.DefaultTask;
@@ -11,8 +12,6 @@ import org.gradle.api.plugins.JavaPluginConvention;
 import org.gradle.api.tasks.SourceSet;
 import org.gradle.api.tasks.TaskAction;
 import testsmell.TestFile;
-import testsmell.TestSmellDetector;
-import thresholds.DefaultThresholds;
 
 import java.io.File;
 import java.util.Collection;
@@ -21,10 +20,10 @@ import java.util.stream.Collectors;
 
 public class DetectTask extends DefaultTask {
 
-    private final TestSmellDetector testSmellDetector = new TestSmellDetector(new DefaultThresholds());
+    private final TestSmellDetectorProvider testSmellDetectorProvider = new TestSmellDetectorProvider();
     private final TestFileDetector testFileDetector = new TestFileDetector();
-    private final TestSmellDetectorRunner testSmellDetectorRunner = new TestSmellDetectorRunner(testSmellDetector, getLogger());
-    private final TestSmellWriter testSmellWriter = new TestSmellWriter(testSmellDetector, getLogger());
+    private final TestSmellDetectorRunner testSmellDetectorRunner = new TestSmellDetectorRunner(testSmellDetectorProvider, getLogger());
+    private final TestSmellWriter testSmellWriter = new TestSmellWriter(testSmellDetectorProvider, getLogger());
 
     @TaskAction
     public void runTask() {
